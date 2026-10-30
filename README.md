@@ -1,8 +1,8 @@
 # Chemille® Digital Assistant — UX case study
 
-A static case study of **Chemille®**, Celanese’s digital assistant at [askchemille.com](https://www.askchemille.com/). The study focuses on guided AI grade search and the competitor-grade replacement flow: plain-language query, one clarifying question, ranked results with a % match, grade detail, and the moment a guest reaches a quote, documents, or a live expert.
+A static case study of **Chemille®**, Celanese’s digital assistant at [askchemille.com](https://www.askchemille.com/). It is a self-initiated concept redesign and UX audit of guided AI grade search and competitor-grade replacement, by [Suvarna Myneni](https://www.linkedin.com/in/suvarnamyneni/).
 
-**Case study by [Suvarna Myneni](https://www.linkedin.com/in/suvarnamyneni/).**
+The live platform was built by Celanese with Work & Co. This study is an independent redesign concept. It does not report interviews, participant quotes, or measured product results. Metric values in the study are targets for a future test.
 
 ## View it
 
@@ -40,9 +40,9 @@ Section order:
 
 Click a final screen to enlarge it. Arrow keys move between images. Escape closes the viewer. Without JavaScript, that control opens the image file directly. The competitive-table switch is CSS, so it still works without JavaScript.
 
-## Placeholders
+## What the study claims
 
-Highlighted `[Add: …]` and `[Add]` marks are intentional. They are facts the source does not contain: role, team, dates, research counts, quotes, prototype link, outcomes, and metric values. They are not filled in here.
+Role: self-initiated concept redesign covering UX research, heuristic evaluation, IA, interaction design, and UI. Team: solo. Primary research is a heuristic evaluation (Nielsen's 10), cognitive walkthroughs, and task analysis of the live desktop screens from 30 Oct 2026. Personas are proto-personas. The prototype is the flows and annotated screens on the page. Outcome describes the concept, not a launch. The metrics table is labeled Target.
 
 ## Screens
 

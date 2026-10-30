@@ -15,8 +15,6 @@
   --amber: #f1af51;
   --match: #c74600;
   --ok: #00a853;
-  --todo-bg: #fff8e8;
-  --todo-line: #c9a15a;
   --radius: 16px;
   --shadow: 0 24px 50px -28px rgba(45, 13, 97, 0.38);
   --max: 1180px;
@@ -101,18 +99,6 @@ a:hover {
 .wrap {
   width: min(var(--max), calc(100% - 48px));
   margin-inline: auto;
-}
-
-mark.todo {
-  background: var(--todo-bg);
-  color: inherit;
-  font-weight: inherit;
-  font-style: normal;
-  padding: 0.04em 0.38em;
-  border-radius: 0.28em;
-  border: 1px dashed var(--todo-line);
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
 }
 
 nav.top {
@@ -1119,28 +1105,6 @@ figcaption {
   display: block;
   margin-bottom: 4px;
   color: var(--brand);
-}
-
-.phbox {
-  margin: 16px 0 0;
-  border: 1.5px dashed var(--todo-line);
-  background: var(--todo-bg);
-  border-radius: 12px;
-  padding: 12px 16px;
-  max-width: 48rem;
-}
-
-.phbox b {
-  display: block;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #7a5a16;
-}
-
-.phbox p {
-  margin: 8px 0 0;
-  max-width: none;
 }
 
 .quiet {
