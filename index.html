@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chemille® Digital Assistant — UX case study by Suvarna Myneni</title>
+    <meta
+      name="description"
+      content="UX case study by Suvarna Myneni. How the guided search flow on askchemille.com takes a design engineer from a plain-language need, or a competitor's grade name, to a shortlist of Celanese polymer grades and, when needed, a live expert."
+    />
+    <meta name="author" content="Suvarna Myneni" />
+    <link rel="canonical" href="https://suvarnamyneni-project.github.io/askchemille-case-study/" />
+    <meta property="og:title" content="Chemille® Digital Assistant — UX case study by Suvarna Myneni" />
+    <meta
+      property="og:description"
+      content="Guided AI grade search and competitor-grade replacement on askchemille.com. A UX case study by Suvarna Myneni."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://suvarnamyneni-project.github.io/askchemille-case-study/" />
+    <meta property="og:image" content="https://suvarnamyneni-project.github.io/askchemille-case-study/assets/images/01-home.png" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <nav class="top" aria-label="Site">
+      <div class="wrap">
+        <a class="brand" href="#top">Suvarna Myneni</a>
+        <div class="links">
+          <a href="#problem">Problem</a>
+          <a href="#primary">Research</a>
+          <a href="#competitive">Competitive</a>
+          <a href="#decisions">Decisions</a>
+          <a href="#final">Designs</a>
+          <a href="#metrics">Metrics</a>
+        </div>
+        <a class="btn" href="https://www.askchemille.com/" target="_blank" rel="noopener noreferrer">Live product</a>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="wrap">
+        <p class="eyebrow">UX case study</p>
+        <p class="byline">Suvarna Myneni</p>
+        <h1>Chemille® Digital Assistant</h1>
+        <p class="deck">
+          How the guided search flow on
+          <a href="https://www.askchemille.com/" target="_blank" rel="noopener noreferrer">askchemille.com</a>
+          takes a design engineer from a plain-language need, or a competitor's grade name, to a shortlist of Celanese polymer grades and, when needed, a live expert.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#final">See the screens</a>
+          <a class="btn ghost" href="#problem">Read the study</a>
+        </div>
+        <div class="meta">
+          <div>
+            <b>Product</b>
+            <p>Chemille® by Celanese</p>
+          </div>
+          <div>
+            <b>My role</b>
+            <p><mark class="todo">[Add: your title and exact scope, e.g. Product Designer for guided search, results and grade detail]</mark></p>
+          </div>
+          <div>
+            <b>Team</b>
+            <p><mark class="todo">[Add: who you worked with: PM, engineers, material scientists, partner agency]</mark></p>
+          </div>
+          <div>
+            <b>Timeline</b>
+            <p><mark class="todo">[Add: start and end dates]</mark></p>
+          </div>
+        </div>
+        <figure class="heroimg">
+          <a href="#final-home">
+            <img
+              src="assets/images/01-home.png"
+              width="1440"
+              height="900"
+              alt="Home on askchemille.com. The headline reads Welcome to the Chemille Digital Assistant, your gateway to endless materials knowledge. A search field shows example prompts, with See all grades and filter, Quick guide, a 31-video playlist, and a free-account benefits card."
+              fetchpriority="high"
+            />
+          </a>
+          <figcaption>
+            Home, desktop, 1440 px wide, captured 30 Oct 2026. Annotated in
+            <a href="#final-home">Final Designs</a>. Select those screens to enlarge them.
+          </figcaption>
+        </figure>
+        <aside class="callout">
+          <p class="callout-lead">Editing note</p>
+          <p>
+            Every item in <mark class="todo">[Add: …]</mark> brackets is a placeholder for your own project data. Product facts on this page come from the live site (reviewed 30 Oct 2026) and the linked public sources; research findings, quotes and results are left for you to fill in.
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <div class="layout wrap">
+      <nav class="toc" aria-label="Case study sections">
+        <p class="toc-label" id="toc-label">Contents</p>
+        <ol aria-labelledby="toc-label">
+          <li><a href="#problem" aria-current="true"><span>01</span> Design Problem</a></li>
+          <li><a href="#stakeholders"><span>02</span> Stakeholders</a></li>
+          <li><a href="#users"><span>03</span> End-users</a></li>
+          <li><a href="#primary"><span>04</span> Primary Research</a></li>
+          <li><a href="#secondary"><span>05</span> Secondary Research</a></li>
+          <li><a href="#competitive"><span>06</span> Competitive Analysis</a></li>
+          <li><a href="#personas"><span>07</span> User Personas</a></li>
+          <li><a href="#decisions"><span>08</span> Design Decisions</a></li>
+          <li><a href="#prototype"><span>09</span> Prototype</a></li>
+          <li><a href="#uikit"><span>10</span> UI Kit</a></li>
+          <li><a href="#final"><span>11</span> Final Designs</a></li>
+          <li><a href="#outcome"><span>12</span> Outcome</a></li>
+          <li><a href="#metrics"><span>13</span> Metrics</a></li>
+        </ol>
+      </nav>
+
+      <main id="main" tabindex="-1">
+        <section class="cs" id="problem">
+          <p class="secnum">01</p>
+          <h2>Design Problem</h2>
+          <dl class="spec">
+            <div>
+              <dt>Product</dt>
+              <dd>Chemille® Digital Assistant by Celanese, <a href="https://www.askchemille.com/" target="_blank" rel="noopener noreferrer">askchemille.com</a></dd>
+            </div>
+            <div>
+              <dt>Public launch</dt>
+              <dd><a href="https://www.celanese.com/news-and-media/2025/april/celanese-unveils-chemille-intelligent-search-for-precise-material-selection" target="_blank" rel="noopener noreferrer">28 April 2025</a> (Celanese press release)</dd>
+            </div>
+            <div>
+              <dt>Designer</dt>
+              <dd>Suvarna Myneni</dd>
+            </div>
+            <div>
+              <dt>My role</dt>
+              <dd><mark class="todo">[Add: your title and exact scope, e.g. Product Designer for guided search, results and grade detail]</mark></dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd><mark class="todo">[Add: who you worked with: PM, engineers, material scientists, partner agency]</mark></dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd><mark class="todo">[Add: start and end dates]</mark></dd>
+            </div>
+            <div>
+              <dt>Platform</dt>
+              <dd>Responsive web, desktop and mobile, English and 中文</dd>
+            </div>
+            <div>
+              <dt>Focus of this study</dt>
+              <dd>Guided search: query, clarifying question, ranked results with % match, grade detail, quote or expert</dd>
+            </div>
+          </dl>
+          <p>Choosing an engineering polymer is a high-stakes call made early in product design. A wrong grade surfaces late, in validation or tooling, when change is expensive. Yet engineers usually start with a loose need ("heat-resistant, glass-filled, for a fuel cap"), a spec number, or a competitor's grade name, not a Celanese trade name.</p>
+          <p>The catalog is deep: the live search lists 2,115 grades and the resource library 448 documents, each grade carrying dense data on chemistry, filler, processing, chemical resistance and certifications. Keyword search and long filter panels push the translation work onto the user.</p>
+          <aside class="hmw">
+            <p class="callout-lead">How might we</p>
+            <p>help a design engineer turn a plain-language need, or a competitor's grade, into a short, trustworthy list of Celanese grades, and know exactly when to bring in a human expert?</p>
+          </aside>
+          <ul>
+            <li>Users arrive from four starting points: alternatives, application, filters, or a live expert (as the site's FAQ lists them).</li>
+            <li>AI output must stay honest: the site labels chemical-resistance data as guidance only, to be validated.</li>
+            <li>Premium content (documents, quotes, chat) sits behind a free account, so the free path still has to deliver value.</li>
+            <li>Global audience in two languages, with trademark, GDPR and cookie-consent requirements.</li>
+          </ul>
+        </section>
+
+        <section class="cs" id="stakeholders">
+          <p class="secnum">02</p>
+          <h2>Stakeholders</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>What each stakeholder needed from the guided-search design.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Stakeholder</th>
+                  <th scope="col">What they care about</th>
+                  <th scope="col">What the design had to give them</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Celanese Engineered Materials leadership</th>
+                  <td>Winning the material decision early in design</td>
+                  <td>A self-serve tool that shows the whole portfolio, so the best grade is not overlooked</td>
+                </tr>
+                <tr>
+                  <th scope="row">Chemille program lead / product owner</th>
+                  <td>Adoption, roadmap, a five-year AI vision</td>
+                  <td>A scalable flow and system that new search types can plug into</td>
+                </tr>
+                <tr>
+                  <th scope="row">Material scientists and application engineers</th>
+                  <td>Accurate recommendations; the FAQ notes 30+ experts enhance the model</td>
+                  <td>Transparent matching (what was understood, why it matched) and clear data caveats</td>
+                </tr>
+                <tr>
+                  <th scope="row">24/5 live-chat technical experts</th>
+                  <td>Arriving conversations that already carry context</td>
+                  <td>Chat entry points on every screen, after the user has shared preliminary needs</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sales and commercial</th>
+                  <td>Qualified leads and quote requests</td>
+                  <td>Request quote on the grade page; account gate placed at moments of intent</td>
+                </tr>
+                <tr>
+                  <th scope="row">Marketing and brand</th>
+                  <td>A recognisable Chemille brand, resource and video content</td>
+                  <td>Consistent visual language; resources and tutorials one click away</td>
+                </tr>
+                <tr>
+                  <th scope="row">Legal, compliance, IT security</th>
+                  <td>Trademark use, GDPR, cookie consent, cybersecurity</td>
+                  <td>Disclaimers, consent modal and policy links that do not break the flow</td>
+                </tr>
+                <tr>
+                  <th scope="row">Engineering, data and AI team</th>
+                  <td>Intent parsing (the search URL carries entities such as grade, application, brand, polymer, property, filler)</td>
+                  <td>UI patterns that expose parsed entities as editable chips</td>
+                </tr>
+                <tr>
+                  <th scope="row">Design and development partner</th>
+                  <td>Launch note credits Work &amp; Co (Accenture Song) with Celanese</td>
+                  <td><mark class="todo">[Add: how your work related to the partner team, if applicable]</mark></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cs" id="users">
+          <p class="secnum">03</p>
+          <h2>End-users</h2>
+          <div class="rows">
+            <article>
+              <h3>Design engineers at OEMs and Tier-1 suppliers</h3>
+              <p>Need a grade that meets thermal, mechanical and chemical demands for a new part; often start from an application or property.</p>
+            </article>
+            <article>
+              <h3>Materials and application engineers</h3>
+              <p>Validate shortlists against specs, OEM approvals, UL listings and chemical-resistance data; want data sheets and documents.</p>
+            </article>
+            <article>
+              <h3>Engineers replacing a current material</h3>
+              <p>Start from a competitor grade name and need a like-for-like Celanese alternative.</p>
+            </article>
+            <article>
+              <h3>Sourcing and procurement specialists</h3>
+              <p>Need quotes, availability and colours once engineering has a shortlist.</p>
+            </article>
+            <article>
+              <h3>Sustainability-driven teams</h3>
+              <p>Look for bio-content, carbon-capture or PFAS-alternative grades.</p>
+            </article>
+          </div>
+          <p>Industries offered as entry points on the site: Automotive and Transportation, Consumer Goods, Electrical and Electronics, Industrial, and Medical and Pharma.</p>
+        </section>
+
+        <section class="cs" id="primary">
+          <p class="secnum">04</p>
+          <h2>Primary Research</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Methods to run. Participant counts are still open.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Method</th>
+                  <th scope="col">Participants</th>
+                  <th scope="col">Goal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Stakeholder interviews</th>
+                  <td><mark class="todo">[Add: number and roles]</mark></td>
+                  <td>Align on business goals, data constraints, and what counts as a qualified lead</td>
+                </tr>
+                <tr>
+                  <th scope="row">Contextual interviews with engineers</th>
+                  <td><mark class="todo">[Add: number of interviews]</mark></td>
+                  <td>Map how engineers select materials today, the tools they use, and where they get stuck</td>
+                </tr>
+                <tr>
+                  <th scope="row">Live-chat and support log review</th>
+                  <td><mark class="todo">[Add: number of conversations reviewed]</mark></td>
+                  <td>Find the questions users ask experts that search should answer</td>
+                </tr>
+                <tr>
+                  <th scope="row">Search query analysis</th>
+                  <td><mark class="todo">[Add: sample size and period]</mark></td>
+                  <td>Classify real queries by starting point: property, application, spec, competitor grade</td>
+                </tr>
+                <tr>
+                  <th scope="row">Moderated usability tests</th>
+                  <td><mark class="todo">[Add: number of participants and rounds]</mark></td>
+                  <td>Test the clarifying-question pattern, % match labels and the account gate</td>
+                </tr>
+                <tr>
+                  <th scope="row">Survey</th>
+                  <td><mark class="todo">[Add: number of responses]</mark></td>
+                  <td><mark class="todo">[Add: what you measured]</mark></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Interview guide (core questions)</h3>
+          <ol>
+            <li>Walk me through the last time you selected a material for a new part. Where did you start?</li>
+            <li>What do you know at that moment: a property, an application, a spec, or a grade you already use?</li>
+            <li>Which tools and people did you rely on, and where did you lose time?</li>
+            <li>How do you decide you trust a recommendation enough to request samples or a quote?</li>
+            <li>When do you reach out to a supplier's engineer, and what do you want them to already know?</li>
+          </ol>
+          <h3>Hypotheses to validate (not findings)</h3>
+          <ul>
+            <li>Engineers describe needs in application language, not trade names, so free-text search beats a filter-first start.</li>
+            <li>One well-timed clarifying question narrows results faster than a full filter panel.</li>
+            <li>Showing what the AI understood, as removable chips, builds trust and enables quick correction.</li>
+            <li>Replacing a competitor grade is a frequent, high-intent starting point that deserves its own path.</li>
+            <li>Users accept an account gate when it appears at a moment of intent (documents, quote, chat), not on arrival.</li>
+          </ul>
+          <div class="phbox">
+            <b>Needs Suvarna’s input</b>
+            <p>Key findings: <mark class="todo">[Add: 3–5 findings from your research, each with the evidence behind it]</mark>. Key quote: <mark class="todo">[Add: a verbatim participant quote with role and industry]</mark>.</p>
+          </div>
+        </section>
+
+        <section class="cs" id="secondary">
+          <p class="secnum">05</p>
+          <h2>Secondary Research</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Published findings and what they implied for the flow. Sources are linked below.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Finding</th>
+                  <th scope="col">Source</th>
+                  <th scope="col">Design implication</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>75% of B2B buyers prefer a rep-free experience, but self-service digital purchases are 1.65× more likely to cause regret; rep-assisted digital paths cut regret by half</td>
+                  <td>Gartner B2B Buying Report (2022 Gartner B2B Buyer Survey)</td>
+                  <td>Pair self-serve AI search with an always-available human expert</td>
+                </tr>
+                <tr>
+                  <td>61% of B2B buyers prefer rep-free buying (632 buyers, Aug–Sep 2024); buyers want seller input when judging whether a product fits their needs</td>
+                  <td>Gartner press release, 25 June 2025</td>
+                  <td>Hand off to an expert at the fit question, with the search context attached</td>
+                </tr>
+                <tr>
+                  <td>67% prefer rep-free (646 buyers, Aug–Sep 2025); 45% used AI during a recent purchase</td>
+                  <td>Gartner press release, 9 March 2026</td>
+                  <td>AI-guided search matches how buyers already research</td>
+                </tr>
+                <tr>
+                  <td>Interaction workers spend 19% of their time tracking down information</td>
+                  <td>McKinsey Global Institute, 2012</td>
+                  <td>Make the first query count: understand intent, cut search steps</td>
+                </tr>
+                <tr>
+                  <td>Exploratory users benefit from interactive filters with counts; users with clear criteria benefit from batch filters with an Apply button</td>
+                  <td>Nielsen Norman Group, User Intent Affects Filter Design</td>
+                  <td>Clarifying chips for explorers; a batch filter modal with a live "View grades" count for spec-driven users</td>
+                </tr>
+                <tr>
+                  <td>Chemille's launch features: material search, alternatives, application matching, specifications search, 24/5 live chat, resource library</td>
+                  <td>Celanese press release, 28 April 2025</td>
+                  <td>Defines the search types the flow must support</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="link-cards">
+            <a href="https://emt.gartnerweb.com/ngw/globalassets/en/marketing/documents/gartner-b2b-buying-report_2023.pdf" target="_blank" rel="noopener noreferrer">
+              <span class="site">gartner.com</span>
+              <strong>Gartner B2B Buying Report</strong>
+            </a>
+            <a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-sales-survey-finds-61-percent-of-b2b-buyers-prefer-a-rep-free-buying-experience" target="_blank" rel="noopener noreferrer">
+              <span class="site">gartner.com</span>
+              <strong>Gartner: 61% of B2B buyers prefer a rep-free buying experience</strong>
+              <span class="date">25 Jun 2025</span>
+            </a>
+            <a href="https://www.gartner.com/en/newsroom/press-releases/2026-03-09-gartner-sales-survey-finds-67-percent-of-b2b-buyers-prefer-a-rep-free-experience" target="_blank" rel="noopener noreferrer">
+              <span class="site">gartner.com</span>
+              <strong>Gartner: 67% of B2B buyers prefer a rep-free experience</strong>
+              <span class="date">9 Mar 2026</span>
+            </a>
+            <a href="https://www.mckinsey.com/mgi/media-center/social-media-productivity-payoff" target="_blank" rel="noopener noreferrer">
+              <span class="site">mckinsey.com</span>
+              <strong>Social media's productivity payoff</strong>
+              <span class="date">21 Aug 2012</span>
+            </a>
+            <a href="https://www.nngroup.com/articles/applying-filters/" target="_blank" rel="noopener noreferrer">
+              <span class="site">nngroup.com</span>
+              <strong>User Intent Affects Filter Design</strong>
+            </a>
+            <a href="https://www.celanese.com/news-and-media/2025/april/celanese-unveils-chemille-intelligent-search-for-precise-material-selection" target="_blank" rel="noopener noreferrer">
+              <span class="site">celanese.com</span>
+              <strong>Celanese Unveils Chemille™: Intelligent Search for Precise Material Selection</strong>
+              <span class="date">28 Apr 2025</span>
+            </a>
+            <a href="https://work.co/news/celanese-launches-chemille/" target="_blank" rel="noopener noreferrer">
+              <span class="site">work.co</span>
+              <strong>Celanese Launches Chemille™, an AI-Powered Materials Platform</strong>
+              <span class="date">15 May 2025</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="cs" id="competitive">
+          <p class="secnum">06</p>
+          <h2>Competitive Analysis</h2>
+          <div class="seg">
+            <div class="seg-bar" role="radiogroup" aria-label="Comparison table">
+              <input type="radio" name="comp" id="view-search" checked />
+              <label for="view-search">Search and alternatives</label>
+              <input type="radio" name="comp" id="view-help" />
+              <label for="view-help">Compare, help, access</label>
+            </div>
+            <div id="panel-search">
+              <div class="table-wrap">
+                <table>
+                  <caption>Search and alternatives. Facts from each platform's own pages, opened 30 Oct 2026.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Platform</th>
+                      <th scope="col">Catalog scope</th>
+                      <th scope="col">How you search</th>
+                      <th scope="col">Alternatives</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"><a href="https://www.askchemille.com/" target="_blank" rel="noopener noreferrer">Chemille® (Celanese)</a></th>
+                      <td>Celanese Engineered Materials portfolio; 2,115 grades listed in search (30 Oct 2026)</td>
+                      <td>Plain-language AI search that asks clarifying questions and turns intent into filter chips</td>
+                      <td>Competitor grade in, Celanese grades out with a % match</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><a href="https://www.ulprospector.com/plastics/en" target="_blank" rel="noopener noreferrer">UL Prospector</a></th>
+                      <td>100,000+ resins and plastics from hundreds of suppliers; 45,000+ UL Yellow Cards</td>
+                      <td>Keyword with Boolean operators, 600+ property filters</td>
+                      <td>Alternative resin search (subscription feature)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><a href="https://www.specialchem.com/plastics" target="_blank" rel="noopener noreferrer">SpecialChem (Omnexus)</a></th>
+                      <td>Master catalog of 103,341 plastics and elastomers from all suppliers</td>
+                      <td>Filters across up to 12 dimensions, graphical search, autosuggest</td>
+                      <td>Not described on the pages reviewed</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><a href="https://www.matweb.com/reference/faq.aspx" target="_blank" rel="noopener noreferrer">MatWeb</a></th>
+                      <td>Data sheets for 200,000+ metals, plastics, ceramics, composites</td>
+                      <td>Text, category, property and composition criteria (3 registered, 10 premium)</td>
+                      <td>Not described on the pages reviewed</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><a href="https://plastics-rubber.basf.com/global/en/performance_polymers/materials" target="_blank" rel="noopener noreferrer">BASF Engineering Plastics Finder</a></th>
+                      <td>BASF engineering plastics portfolio (described as non-exhaustive)</td>
+                      <td>Parameter-based refinement</td>
+                      <td>Not described on the pages reviewed</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="panel-help">
+              <div class="table-wrap">
+                <table>
+                  <caption>Compare, human help, and access. Facts from each platform's own pages, opened 30 Oct 2026.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Platform</th>
+                      <th scope="col">Compare</th>
+                      <th scope="col">Human help</th>
+                      <th scope="col">Access and cost</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"><a href="https://www.askchemille.com/" target="_blank" rel="noopener noreferrer">Chemille® (Celanese)</a></th>
+                      <td>Side-by-side compare with downloadable summaries (per tutorial playlist)</td>
+                      <td>24/5 engineer-to-engineer live chat, email, request a quote</td>
+                      <td>Free; free account unlocks chat, documents, saved searches, PFAS alternatives, quotes</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><a href="https://www.ulprospector.com/plastics/en" target="_blank" rel="noopener noreferrer">UL Prospector</a></th>
+                      <td>Up to 5 materials side by side, radar plot</td>
+                      <td>Contact suppliers and distributors for pricing</td>
+                      <td>Free account plus paid tiers; Property Search from $49 per user per month (annual)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><a href="https://www.specialchem.com/plastics" target="_blank" rel="noopener noreferrer">SpecialChem (Omnexus)</a></th>
+                      <td>Compare grades, graphical comparison</td>
+                      <td>Connect with suppliers, request samples</td>
+                      <td>Free</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><a href="https://www.matweb.com/reference/faq.aspx" target="_blank" rel="noopener noreferrer">MatWeb</a></th>
+                      <td>Compare 3 (registered) or 20 (premium) data sheets</td>
+                      <td>Supplier listings on data sheets</td>
+                      <td>Free; Premium $99.95 per year</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><a href="https://plastics-rubber.basf.com/global/en/performance_polymers/materials" target="_blank" rel="noopener noreferrer">BASF Engineering Plastics Finder</a></th>
+                      <td>Not described on the pages reviewed</td>
+                      <td>Directs users to BASF experts</td>
+                      <td>Free</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <figure class="diagram">
+            <div class="diagram-scroll">
+              <svg viewBox="0 0 760 500" role="img" aria-labelledby="matrix-title matrix-desc">
+                <title id="matrix-title">Where each catalog sits</title>
+                <desc id="matrix-desc">Horizontal axis from single-supplier catalog to multi-supplier catalog. Vertical axis from self-filtering to guided, with experts. Chemille sits toward single-supplier and guided. BASF Finder is single-supplier and mid-guidance. UL Prospector, SpecialChem and MatWeb sit toward multi-supplier catalogs, with MatWeb the most self-filtering.</desc>
+                <line class="axis" x1="150" y1="28" x2="150" y2="400" />
+                <line class="axis" x1="150" y1="400" x2="730" y2="400" />
+                <line class="guide" x1="440" y1="28" x2="440" y2="400" />
+                <line class="guide" x1="150" y1="214" x2="730" y2="214" />
+                <text class="t-axis" x="150" y="18">Guided, with experts</text>
+                <text class="t-axis" x="162" y="388">Self-filtering</text>
+                <text class="t-axis" x="150" y="432">Single-supplier catalog</text>
+                <text class="t-axis" x="730" y="432" text-anchor="end">Multi-supplier catalog</text>
+                <circle class="dot dot-brand" cx="237" cy="65" r="8" />
+                <text class="t-point" x="252" y="62">Chemille®</text>
+                <circle class="dot" cx="266" cy="251" r="6" />
+                <text class="t-point" x="280" y="248">BASF Finder</text>
+                <circle class="dot" cx="614" cy="270" r="6" />
+                <text class="t-point" x="604" y="254" text-anchor="end">UL Prospector</text>
+                <circle class="dot" cx="672" cy="177" r="6" />
+                <text class="t-point" x="662" y="164" text-anchor="end">SpecialChem</text>
+                <circle class="dot" cx="701" cy="355" r="6" />
+                <text class="t-point" x="690" y="346" text-anchor="end">MatWeb</text>
+              </svg>
+            </div>
+            <figcaption>Positions are a qualitative read of the features each site describes, not measured data. Facts in the table come from each platform's own pages, opened 30 Oct 2026.</figcaption>
+          </figure>
+
+          <h3>Opportunity gaps</h3>
+          <ul>
+            <li>Databases expect users to speak in filters; none of the reviewed pages describe a search that asks the user a clarifying question.</li>
+            <li>Alternatives search is paywalled on UL Prospector and not described elsewhere; a free, explained % match is a clear differentiator.</li>
+            <li>Multi-supplier databases hand users off to suppliers; a supplier-owned tool can offer an engineer in the same session.</li>
+            <li>Sustainability and PFAS-alternative discovery is emerging as its own search intent.</li>
+            <li>Most tools gate advanced features by price; a free account gate tied to intent lowers the barrier.</li>
+          </ul>
+        </section>
+
+        <section class="cs" id="personas">
+          <p class="secnum">07</p>
+          <h2>User Personas</h2>
+          <p>Proto-personas built from the end-user groups above; validate with your research: <mark class="todo">[Add: number of participants each persona draws on]</mark>.</p>
+          <div class="persona-grid">
+            <article>
+              <h3>Priya, Design Engineer</h3>
+              <dl>
+                <dt>Context</dt>
+                <dd>Tier-1 automotive supplier, under-hood parts</dd>
+                <dt>Starts with</dt>
+                <dd>An application and a few properties</dd>
+                <dt>Goal</dt>
+                <dd>A credible shortlist before the design review</dd>
+                <dt>Pain</dt>
+                <dd>Does not know trade names; filter panels return hundreds of grades</dd>
+                <dt>Needs</dt>
+                <dd>Plain-language search, a guided narrowing step, fast comparison</dd>
+              </dl>
+            </article>
+            <article>
+              <h3>Marcus, Materials Engineer</h3>
+              <dl>
+                <dt>Context</dt>
+                <dd>Medical-device OEM, validation and compliance</dd>
+                <dt>Starts with</dt>
+                <dd>A spec, certification or chemical-resistance need</dd>
+                <dt>Goal</dt>
+                <dd>Evidence he can defend: data, documents, approvals</dd>
+                <dt>Pain</dt>
+                <dd>Black-box recommendations; data scattered across PDFs</dd>
+                <dt>Needs</dt>
+                <dd>Transparent matching, deep grade data, an expert for edge cases</dd>
+              </dl>
+            </article>
+            <article>
+              <h3>Lin, Sourcing Specialist</h3>
+              <dl>
+                <dt>Context</dt>
+                <dd>Electrical and electronics manufacturer</dd>
+                <dt>Starts with</dt>
+                <dd>A competitor grade that is costly or hard to source</dd>
+                <dt>Goal</dt>
+                <dd>A drop-in alternative and a quote quickly</dd>
+                <dt>Pain</dt>
+                <dd>Cross-referencing grades by hand; waiting on email replies</dd>
+                <dt>Needs</dt>
+                <dd>Alternatives with % match, request-a-quote, saved searches</dd>
+              </dl>
+            </article>
+          </div>
+        </section>
+
+        <section class="cs" id="decisions">
+          <p class="secnum">08</p>
+          <h2>Design Decisions</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>Decisions mapped to the persona whose pain they address.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Decision</th>
+                  <th scope="col">Persona</th>
+                  <th scope="col">Pain point it solves</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>One plain-language search box as the front door, with example prompts ("PPS grade for extrusion")</td>
+                  <td>Priya</td>
+                  <td>Does not know trade names; blank-page anxiety</td>
+                </tr>
+                <tr>
+                  <td>A single clarifying question after the query, as tappable chips with Skip ("Which processing filter(s)… for 'extrusion'?")</td>
+                  <td>Priya</td>
+                  <td>Vague query returns too many grades</td>
+                </tr>
+                <tr>
+                  <td>Show what the AI understood as removable filter chips (PPS ×, Profile Extrusion ×)</td>
+                  <td>Marcus</td>
+                  <td>Black-box results; no way to correct the AI</td>
+                </tr>
+                <tr>
+                  <td>Conversational result count in the headline ("We have 17 grades…") and a live "View grades • 2115" count in the filter modal</td>
+                  <td>All</td>
+                  <td>Dead ends and zero-result searches</td>
+                </tr>
+                <tr>
+                  <td>Alternatives path: disambiguate the competitor variant, then rank Celanese grades by % match</td>
+                  <td>Lin</td>
+                  <td>Manual cross-referencing of competitor grades</td>
+                </tr>
+                <tr>
+                  <td>Split strong matches from "Partial matches to consider", ending with "Need an exact match? Get in touch"</td>
+                  <td>Marcus</td>
+                  <td>Fear of missing a better grade; no next step when nothing fits</td>
+                </tr>
+                <tr>
+                  <td>Batch filter modal with nine facet groups, including Sustainable options, PFAS alternatives, Chemical resistance and Specifications</td>
+                  <td>Marcus</td>
+                  <td>Spec-driven users need precise, multi-criteria filtering</td>
+                </tr>
+                <tr>
+                  <td>Grade page leads with summary, Request quote and View Documents, plus Jump-to anchors</td>
+                  <td>Marcus, Lin</td>
+                  <td>Long technical pages; slow path to action</td>
+                </tr>
+                <tr>
+                  <td>Strong-match rail beside the grade page to switch grades without losing context</td>
+                  <td>Priya</td>
+                  <td>Back-and-forth between list and detail</td>
+                </tr>
+                <tr>
+                  <td>Soft gate: search and browse free; a free account unlocks chat, documents, saved searches, PFAS alternatives and quotes</td>
+                  <td>Lin, business</td>
+                  <td>Sign-up friction versus lead capture</td>
+                </tr>
+                <tr>
+                  <td>Persistent chat and email buttons on every screen (24/5 experts)</td>
+                  <td>Marcus</td>
+                  <td>Edge cases AI cannot answer</td>
+                </tr>
+                <tr>
+                  <td>Industry entry points ("Start searching by Industry")</td>
+                  <td>New users</td>
+                  <td>Not sure how to begin</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 id="ia">Information architecture</h3>
+          <figure class="diagram diagram--ia">
+            <div class="diagram-scroll">
+              <svg viewBox="0 0 880 590" role="img" aria-labelledby="ia-title ia-desc">
+                <title id="ia-title">Information architecture sitemap</title>
+                <desc id="ia-desc">Home links to Search results, Saved, Resources, More menu and Account. Search results links to Grade detail. Grade detail links to Live chat, labeled Talk to a specialist. A dashed link from Search results to Live chat is labeled Get in touch.</desc>
+                <defs>
+                  <marker id="mk-ia" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                    <path d="M 0 1.2 L 10 5 L 0 8.8 z" fill="#2D0D61" />
+                  </marker>
+                </defs>
+                <line class="edge" x1="440" y1="112" x2="440" y2="138" />
+                <line class="edge" x1="100" y1="138" x2="780" y2="138" />
+                <line class="edge" x1="100" y1="138" x2="100" y2="160" marker-end="url(#mk-ia)" />
+                <line class="edge" x1="270" y1="138" x2="270" y2="160" marker-end="url(#mk-ia)" />
+                <line class="edge" x1="440" y1="138" x2="440" y2="160" marker-end="url(#mk-ia)" />
+                <line class="edge" x1="610" y1="138" x2="610" y2="160" marker-end="url(#mk-ia)" />
+                <line class="edge" x1="780" y1="138" x2="780" y2="160" marker-end="url(#mk-ia)" />
+                <line class="edge" x1="440" y1="262" x2="440" y2="304" marker-end="url(#mk-ia)" />
+                <line class="edge" x1="440" y1="400" x2="440" y2="468" marker-end="url(#mk-ia)" />
+                <path class="edge edge-dash" d="M 500 262 V 284 H 868 V 514 H 555" marker-end="url(#mk-ia)" />
+                <rect class="pill" x="748" y="360" width="108" height="22" rx="11" />
+                <text class="t-edge" x="802" y="375" text-anchor="middle">Get in touch</text>
+                <rect class="pill" x="456" y="422" width="158" height="22" rx="11" />
+                <text class="t-edge" x="535" y="437" text-anchor="middle">Talk to a specialist</text>
+
+                <rect class="n-term" x="325" y="12" width="230" height="100" rx="14" />
+                <text class="t-kicker t-kicker-on" x="341" y="34">START</text>
+                <text class="t-title t-on" x="341" y="58">Home</text>
+                <text class="t-detail t-on-dim" x="341" y="80">AI search, quick guide,</text>
+                <text class="t-detail t-on-dim" x="341" y="96">industries</text>
+
+                <rect class="n-box" x="22" y="160" width="156" height="102" rx="14" />
+                <text class="t-title t-sm" x="36" y="198">Saved</text>
+                <text class="t-detail" x="36" y="220">Searches, grades,</text>
+                <text class="t-detail" x="36" y="238">resources</text>
+
+                <rect class="n-box" x="192" y="160" width="156" height="102" rx="14" />
+                <text class="t-title t-sm" x="206" y="198">Resources</text>
+                <text class="t-detail" x="206" y="220">448 documents,</text>
+                <text class="t-detail" x="206" y="238">filters</text>
+
+                <rect class="n-box" x="362" y="160" width="156" height="102" rx="14" />
+                <text class="t-title t-sm" x="376" y="198">Search results</text>
+                <text class="t-detail" x="376" y="220">Clarifying chips,</text>
+                <text class="t-detail" x="376" y="238">filters, matches</text>
+
+                <rect class="n-box" x="532" y="160" width="156" height="102" rx="14" />
+                <text class="t-title t-sm" x="546" y="198">More menu</text>
+                <text class="t-detail" x="546" y="220">About, FAQ,</text>
+                <text class="t-detail" x="546" y="238">Videos, Contact</text>
+
+                <rect class="n-box" x="702" y="160" width="156" height="102" rx="14" />
+                <text class="t-title t-sm" x="716" y="198">Account</text>
+                <text class="t-detail" x="716" y="220">Sign in, register,</text>
+                <text class="t-detail" x="716" y="238">preferences</text>
+
+                <rect class="n-box" x="362" y="304" width="156" height="96" rx="14" />
+                <text class="t-title t-sm" x="376" y="340">Grade detail</text>
+                <text class="t-detail" x="376" y="362">Resistance, properties,</text>
+                <text class="t-detail" x="376" y="380">colours</text>
+
+                <rect class="n-person" x="325" y="468" width="230" height="92" rx="14" />
+                <text class="t-kicker" x="341" y="494">EXPERT</text>
+                <text class="t-title" x="341" y="518">Live chat</text>
+                <text class="t-detail" x="341" y="540">24/5 experts</text>
+              </svg>
+            </div>
+            <figcaption>Sitemap of the guided-search product. Scroll sideways on a small screen. The dashed link is the expert hand-off from results.</figcaption>
+          </figure>
+
+          <h3 id="flow-search">Key flow: plain-language search to quote</h3>
+          <figure class="diagram diagram--flow">
+            <div class="diagram-scroll">
+              <svg viewBox="0 0 860 1180" role="img" aria-labelledby="flow1-title flow1-desc">
+                <title id="flow1-title">Plain-language search to quote</title>
+                <desc id="flow1-desc">Type a need, then AI parses intent, then a clarifying question. Answer leads to picking a chip. Skip goes straight to ranked results. Ranked results lead to grade detail, then a signed-in check. Yes leads to quote, documents or chat. No leads to an account gate, then to the same quote, documents or chat step.</desc>
+                <defs>
+                  <marker id="mk-flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                    <path d="M 0 1.2 L 10 5 L 0 8.8 z" fill="#2D0D61" />
+                  </marker>
+                </defs>
+                <path class="edge" d="M 430 98 V 132" marker-end="url(#mk-flow)" />
+                <path class="edge" d="M 430 210 V 244" marker-end="url(#mk-flow)" />
+                <path class="edge" d="M 430 322 V 356 H 185 V 390" marker-end="url(#mk-flow)" />
+                <path class="edge" d="M 185 468 V 539 H 270" marker-end="url(#mk-flow)" />
+                <path class="edge" d="M 590 283 H 820 V 539 H 590" marker-end="url(#mk-flow)" />
+                <path class="edge" d="M 430 578 V 612" marker-end="url(#mk-flow)" />
+                <path class="edge" d="M 430 690 V 724" marker-end="url(#mk-flow)" />
+                <path class="edge" d="M 350 802 V 1040" marker-end="url(#mk-flow)" />
+                <path class="edge" d="M 590 763 H 665 V 870" marker-end="url(#mk-flow)" />
+                <path class="edge" d="M 665 948 V 1079 H 550" marker-end="url(#mk-flow)" />
+                <rect class="pill" x="248" y="340" width="64" height="22" rx="11" />
+                <text class="t-edge" x="280" y="355" text-anchor="middle">Answer</text>
+                <rect class="pill" x="742" y="256" width="48" height="22" rx="11" />
+                <text class="t-edge" x="766" y="271" text-anchor="middle">Skip</text>
+                <rect class="pill" x="358" y="900" width="40" height="22" rx="11" />
+                <text class="t-edge" x="378" y="915" text-anchor="middle">Yes</text>
+                <rect class="pill" x="674" y="800" width="36" height="22" rx="11" />
+                <text class="t-edge" x="692" y="815" text-anchor="middle">No</text>
+
+                <rect class="n-term" x="270" y="20" width="320" height="78" rx="14" />
+                <text class="t-title t-on" x="286" y="52">Type a need</text>
+                <text class="t-detail t-on-dim" x="286" y="74">"PPS grade for extrusion"</text>
+
+                <rect class="n-box" x="270" y="132" width="320" height="78" rx="14" />
+                <text class="t-title" x="286" y="164">AI parses intent</text>
+                <text class="t-detail" x="286" y="186">PPS becomes a filter chip</text>
+
+                <rect class="n-dec" x="270" y="244" width="320" height="78" rx="14" />
+                <text class="t-kicker" x="286" y="270">DECISION</text>
+                <text class="t-title" x="286" y="296">Clarifying question?</text>
+
+                <rect class="n-box" x="20" y="390" width="330" height="78" rx="14" />
+                <text class="t-title" x="36" y="422">Pick a chip</text>
+                <text class="t-detail" x="36" y="444">Profile Extrusion: 17 to 14 grades</text>
+
+                <rect class="n-box" x="270" y="500" width="320" height="78" rx="14" />
+                <text class="t-title" x="286" y="532">Ranked results</text>
+                <text class="t-detail" x="286" y="554">Strong and partial matches</text>
+
+                <rect class="n-box" x="270" y="612" width="320" height="78" rx="14" />
+                <text class="t-title" x="286" y="656">Grade detail</text>
+
+                <rect class="n-dec" x="270" y="724" width="320" height="78" rx="14" />
+                <text class="t-kicker" x="286" y="750">DECISION</text>
+                <text class="t-title" x="286" y="776">Signed in?</text>
+
+                <rect class="n-box" x="500" y="870" width="330" height="78" rx="14" />
+                <text class="t-title" x="516" y="902">Account gate</text>
+                <text class="t-detail" x="516" y="924">Free account, value list</text>
+
+                <rect class="n-term" x="150" y="1040" width="400" height="78" rx="14" />
+                <text class="t-title t-on" x="166" y="1084">Quote, documents or chat</text>
+              </svg>
+            </div>
+            <figcaption>
+              From a plain-language query to a quote, documents, or chat. The live clarifying step is annotated under
+              <a href="#final-results">Guided results</a>.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="#final-results">
+              <img src="assets/images/02-ai-results-clarifying.png" width="1440" height="900" alt="Results for PPS grade for extrusion, with a PPS filter chip and a clarifying question about processing type." loading="lazy" />
+            </a>
+            <figcaption>The clarifying question on the live site. Annotations sit with the screen in Final Designs.</figcaption>
+          </figure>
+
+          <h3 id="flow-alt">Key flow: replace a competitor grade</h3>
+          <figure class="diagram diagram--alt">
+            <div class="diagram-scroll">
+              <svg viewBox="0 0 880 156" role="img" aria-labelledby="flow2-title flow2-desc">
+                <title id="flow2-title">Replace a competitor grade</title>
+                <desc id="flow2-desc">Start with Alternative to Ultramid A3WG6, then choose which variant from five chips, then see grades ranked by percent match, then compare and open a grade, then request a quote or an expert.</desc>
+                <defs>
+                  <marker id="mk-alt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                    <path d="M 0 1.2 L 10 5 L 0 8.8 z" fill="#2D0D61" />
+                  </marker>
+                </defs>
+                <path class="edge" d="M 158 78 H 178" marker-end="url(#mk-alt)" />
+                <path class="edge" d="M 334 78 H 354" marker-end="url(#mk-alt)" />
+                <path class="edge" d="M 510 78 H 530" marker-end="url(#mk-alt)" />
+                <path class="edge" d="M 686 78 H 706" marker-end="url(#mk-alt)" />
+
+                <rect class="n-term" x="8" y="20" width="150" height="116" rx="14" />
+                <text class="t-kicker t-kicker-on" x="20" y="44">START</text>
+                <text class="t-title t-on t-sm" x="20" y="70">Alternative to</text>
+                <text class="t-title t-on t-sm" x="20" y="90">Ultramid A3WG6</text>
+
+                <rect class="n-dec" x="178" y="20" width="156" height="116" rx="14" />
+                <text class="t-kicker" x="192" y="44">DECISION</text>
+                <text class="t-title t-sm" x="192" y="70">Which variant?</text>
+                <text class="t-detail" x="192" y="96">5 variants as chips</text>
+
+                <rect class="n-box" x="354" y="20" width="156" height="116" rx="14" />
+                <text class="t-title t-sm" x="368" y="70">Ranked by</text>
+                <text class="t-title t-sm" x="368" y="88">% match</text>
+                <text class="t-detail" x="368" y="112">e.g. 98% match</text>
+
+                <rect class="n-box" x="530" y="20" width="156" height="116" rx="14" />
+                <text class="t-title t-sm" x="544" y="70">Compare and</text>
+                <text class="t-title t-sm" x="544" y="90">open grade</text>
+
+                <rect class="n-term" x="706" y="20" width="160" height="116" rx="14" />
+                <text class="t-title t-on t-sm" x="720" y="78">Quote or</text>
+                <text class="t-title t-on t-sm" x="720" y="98">expert</text>
+              </svg>
+            </div>
+            <figcaption>
+              Competitor-grade replacement. The live % match screen is annotated under
+              <a href="#final-alt">Alternatives</a>.
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="#final-alt">
+              <img src="assets/images/03-alternatives-match.png" width="1440" height="900" alt="Alternatives search for ultramid a3wg6, asking which variant, with a result card showing a 98 percent match." loading="lazy" />
+            </a>
+            <figcaption>Variant chips before ranking. Annotations sit with the screen in Final Designs.</figcaption>
+          </figure>
+        </section>
+
+        <section class="cs" id="prototype">
+          <p class="secnum">09</p>
+          <h2>Prototype</h2>
+          <dl class="spec">
+            <div>
+              <dt>Figma prototype</dt>
+              <dd><mark class="todo">[Add: Figma prototype link]</mark></dd>
+            </div>
+            <div>
+              <dt>Fidelity</dt>
+              <dd><mark class="todo">[Add: e.g. high-fidelity, clickable, desktop and mobile]</mark></dd>
+            </div>
+            <div>
+              <dt>Tested with</dt>
+              <dd><mark class="todo">[Add: number of participants and roles]</mark></dd>
+            </div>
+            <div>
+              <dt>Iterations</dt>
+              <dd><mark class="todo">[Add: number of rounds and what changed]</mark></dd>
+            </div>
+          </dl>
+          <ol class="steps">
+            <li>
+              <h3>Home: describe the need</h3>
+              <p>Type "PPS grade for extrusion" in the hero search, or pick an industry.</p>
+            </li>
+            <li>
+              <h3>AI parses the query</h3>
+              <p>PPS appears as a removable chip; the headline confirms 17 grades.</p>
+            </li>
+            <li>
+              <h3>Answer one clarifying question</h3>
+              <p>Choose Profile Extrusion from the processing chips, or Skip; the result count updates.</p>
+            </li>
+            <li>
+              <h3>Scan ranked results</h3>
+              <p>Strong matches first, partial matches below, and an expert prompt at the end.</p>
+            </li>
+            <li>
+              <h3>Open a grade</h3>
+              <p>Fortron® FX20T1: summary, key features, chemical resistance, properties, colours.</p>
+            </li>
+            <li>
+              <h3>Act</h3>
+              <p>Request quote or View Documents opens the free-account gate for guests; chat is always available.</p>
+            </li>
+            <li>
+              <h3>Alternate path</h3>
+              <p>Search a competitor grade, choose the variant, review % matches, compare.</p>
+            </li>
+          </ol>
+          <p>States covered in the prototype: <mark class="todo">[Add: e.g. loading, no results, partial matches only, signed-in vs guest, mobile]</mark>.</p>
+          <div class="film" aria-label="Screens in this flow">
+            <figure>
+              <a href="#final-home"><img src="assets/images/01-home.png" width="1440" height="900" alt="Home screen, linked to its annotations" loading="lazy" /></a>
+              <figcaption><a href="#final-home">Home</a></figcaption>
+            </figure>
+            <figure>
+              <a href="#final-results"><img src="assets/images/02-ai-results-clarifying.png" width="1440" height="900" alt="Clarifying-question screen, linked to its annotations" loading="lazy" /></a>
+              <figcaption><a href="#final-results">Clarifying question</a></figcaption>
+            </figure>
+            <figure>
+              <a href="#final-alt"><img src="assets/images/03-alternatives-match.png" width="1440" height="900" alt="Percent-match screen, linked to its annotations" loading="lazy" /></a>
+              <figcaption><a href="#final-alt">% match</a></figcaption>
+            </figure>
+            <figure>
+              <a href="#final-grade"><img src="assets/images/04-grade-detail.png" width="1440" height="900" alt="Grade detail screen, linked to its annotations" loading="lazy" /></a>
+              <figcaption><a href="#final-grade">Grade detail</a></figcaption>
+            </figure>
+            <figure>
+              <a href="#final-gate"><img src="assets/images/05-signin-gate.png" width="1440" height="900" alt="Account gate screen, linked to its annotations" loading="lazy" /></a>
+              <figcaption><a href="#final-gate">Account gate</a></figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="cs" id="uikit">
+          <p class="secnum">10</p>
+          <h2>UI Kit</h2>
+          <p>Values below are taken from the live site's CSS on 30 Oct 2026. The system is a violet-led, soft-surface palette built on Tailwind tokens.</p>
+
+          <h3>Brand colours</h3>
+          <div class="swatches">
+            <article class="swatch"><div class="swatch-chip" style="background:#2D0D61"></div><div><strong>Midnight Violet</strong><span class="hex">#2D0D61</span><p>Primary ink, headlines, primary buttons</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#41128D"></div><div><strong>Deep Violet</strong><span class="hex">#41128D</span><p>Pressed / deep accent</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#5018A9"></div><div><strong>Royal Violet</strong><span class="hex">#5018A9</span><p>Hover, focused links</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#661FD8"></div><div><strong>Electric Violet</strong><span class="hex">#661FD8</span><p>Emphasis words ("free"), active links</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#9A74E2"></div><div><strong>Lavender</strong><span class="hex">#9A74E2</span><p>Decorative accent</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#6360A7"></div><div><strong>Dusk</strong><span class="hex">#6360A7</span><p>Secondary text</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#827EB9"></div><div><strong>Muted Lilac</strong><span class="hex">#827EB9</span><p>Second line of hero headlines, icons</p></div></article>
+          </div>
+
+          <h3>Surfaces</h3>
+          <div class="swatches">
+            <article class="swatch"><div class="swatch-chip" style="background:#E5E8FF"></div><div><strong>Theme Surface</strong><span class="hex">#E5E8FF</span><p>App canvas behind search and results</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#D7DAF7"></div><div><strong>Chip Fill</strong><span class="hex">#D7DAF7</span><p>Tonal buttons, suggestion chips</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#CBD0F6"></div><div><strong>Lilac Tint</strong><span class="hex">#CBD0F6</span><p>Selected / hovered chips</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#C8CEF9"></div><div><strong>Divider</strong><span class="hex">#C8CEF9</span><p>Rules and borders</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#BAC0F2"></div><div><strong>Disabled</strong><span class="hex">#BAC0F2</span><p>Disabled controls</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#F5F6FF"></div><div><strong>Card Tint</strong><span class="hex">#F5F6FF</span><p>Cards, panels</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#FFFFFF"></div><div><strong>Paper</strong><span class="hex">#FFFFFF</span><p>Search field, modals, detail pane</p></div></article>
+          </div>
+
+          <h3>Semantic colours</h3>
+          <div class="swatches">
+            <article class="swatch"><div class="swatch-chip" style="background:#C74600"></div><div><strong>Match Orange</strong><span class="hex">#C74600</span><p>% match to a competitor grade</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#00A853"></div><div><strong>Success Green</strong><span class="hex">#00A853</span><p>Benefit checkmarks</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#005F2B"></div><div><strong>Deep Green</strong><span class="hex">#005F2B</span><p>Positive status text</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#B91212"></div><div><strong>Error Red</strong><span class="hex">#B91212</span><p>Errors, required fields</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#F1AF51"></div><div><strong>Amber</strong><span class="hex">#F1AF51</span><p>Highlights, notices</p></div></article>
+            <article class="swatch"><div class="swatch-chip" style="background:#424C72"></div><div><strong>Slate</strong><span class="hex">#424C72</span><p>Neutral UI text</p></div></article>
+          </div>
+
+          <h3>Typography</h3>
+          <div style="font-family:'Myriad Pro', Arial, sans-serif">
+            <div class="type-sample">
+              <span>H1 Semibold · 56 / 100%</span>
+              <div style="font-size:clamp(28px, 4vw, 56px); line-height:1; font-weight:600; letter-spacing:-0.02em; color:#2D0D61">Welcome to Chemille®</div>
+            </div>
+            <div class="type-sample">
+              <span>H2 Semibold · 40 / 110%</span>
+              <div style="font-size:clamp(24px, 3vw, 40px); line-height:1.1; font-weight:600; letter-spacing:-0.02em; color:#2D0D61">Meet the assistant</div>
+            </div>
+            <div class="type-sample">
+              <span>H3 Semibold · 32 / 110%</span>
+              <div style="font-size:clamp(22px, 2.4vw, 32px); line-height:1.1; font-weight:600; color:#2D0D61">We have 17 grades</div>
+            </div>
+            <div class="type-sample">
+              <span>Body · 16 / 24</span>
+              <div style="font-size:16px; line-height:24px; font-weight:400">Fortron® FX20T1 is an unreinforced, impact modified PPS.</div>
+            </div>
+            <div class="type-sample">
+              <span>Small · 14 / 20</span>
+              <div style="font-size:14px; line-height:20px; font-weight:400">Heat stabilized or stable to heat · Injection Molding</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <caption>Type tokens from the live site. Two weights only, 400 and 600.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Token</th>
+                  <th scope="col">Size / line height</th>
+                  <th scope="col">Weight</th>
+                  <th scope="col">Used for</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">text-h1-semi</th>
+                  <td>56px / 100%, tracking -0.07rem (44 and 36px at smaller breakpoints)</td>
+                  <td>600</td>
+                  <td>Hero headlines, grade names</td>
+                </tr>
+                <tr>
+                  <th scope="row">text-h2-semi</th>
+                  <td>40px / 110% (36, 28px responsive)</td>
+                  <td>600</td>
+                  <td>Page and modal titles</td>
+                </tr>
+                <tr>
+                  <th scope="row">text-h3-semi</th>
+                  <td>32px / 110% (28, 24px responsive)</td>
+                  <td>600</td>
+                  <td>Assistant responses, section titles</td>
+                </tr>
+                <tr>
+                  <th scope="row">text-h3-semi-small</th>
+                  <td>19px / 110%</td>
+                  <td>600</td>
+                  <td>Card titles</td>
+                </tr>
+                <tr>
+                  <th scope="row">text-base</th>
+                  <td>16px / 24px</td>
+                  <td>400</td>
+                  <td>Body, buttons</td>
+                </tr>
+                <tr>
+                  <th scope="row">text-sm</th>
+                  <td>14px / 20px</td>
+                  <td>400</td>
+                  <td>Chips, result attributes, menus</td>
+                </tr>
+                <tr>
+                  <th scope="row">text-xs</th>
+                  <td>12px / 16px</td>
+                  <td>400</td>
+                  <td>Captions, legal</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Typeface: Myriad Pro, served from Adobe Fonts, with Arial as the fallback. Two weights only, 400 and 600. The specimens above use Myriad Pro when it is installed, and Arial otherwise. This case study page itself uses Inter, the same family as the other portfolio studies.</p>
+
+          <h3>Buttons and chips</h3>
+          <div class="specimen" aria-hidden="true">
+            <span class="ui-pill ui-primary">Create a free account</span>
+            <span class="ui-pill ui-outline">Sign in</span>
+            <span class="ui-pill ui-tonal">Quick guide</span>
+            <span class="ui-pill ui-suggest">+ Profile Extrusion</span>
+            <span class="ui-pill ui-filter">PPS ×</span>
+            <span class="ui-match">98% match to Ultramid® A3WG6 LT BK</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Component</th>
+                  <th scope="col">Spec</th>
+                  <th scope="col">Examples on site</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Primary pill</th>
+                  <td>Fill #2D0D61, white text, 16px, padding 16×24, full radius, about 53–56px tall</td>
+                  <td>Create a free account, See all grades &amp; filter, Request quote</td>
+                </tr>
+                <tr>
+                  <th scope="row">Secondary outline</th>
+                  <td>Transparent, 1px #2D0D61 border, violet text</td>
+                  <td>Sign in, View Documents, Watch playlist</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tonal pill</th>
+                  <td>Fill #D7DAF7, violet text</td>
+                  <td>Quick guide, Got it</td>
+                </tr>
+                <tr>
+                  <th scope="row">Suggestion chip</th>
+                  <td>Tonal pill, 14px, leading +</td>
+                  <td>Film Extrusion, Bio-Content, Skip</td>
+                </tr>
+                <tr>
+                  <th scope="row">Filter chip</th>
+                  <td>Checkbox plus label plus ×, removable</td>
+                  <td>PPS ×, U.V. stabilized ×</td>
+                </tr>
+                <tr>
+                  <th scope="row">Menu item</th>
+                  <td>Transparent, 12px radius, padding 8×16, 14px</td>
+                  <td>About, FAQ, Share Feedback, language</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Components, radius and elevation</h3>
+          <div class="components">
+            <article class="component"><strong>Search field</strong><p>White, 16px radius, rotating example prompts, search icon trailing</p></article>
+            <article class="component"><strong>Result card</strong><p>Card Tint #F5F6FF, grade name, polymer and filler, three key attributes, save / compare / more actions</p></article>
+            <article class="component"><strong>Match label</strong><p>Match Orange #C74600, "98% match to …, +1" with expand</p></article>
+            <article class="component"><strong>Gate modal</strong><p>White, user icon, value list with green checks and lock icons, primary and outline CTAs</p></article>
+            <article class="component"><strong>Side nav</strong><p>Icon rail: Home, Saved, Resources; More, compare, language, account at the bottom</p></article>
+            <article class="component"><strong>Floating actions</strong><p>Two violet circular buttons, email and chat, fixed bottom-right</p></article>
+            <article class="component"><strong>Radius scale</strong><p>4, 8, 12, 16, 24, 32px and full</p></article>
+            <article class="component"><strong>Elevation</strong><p>0 12px 24px -12px #1F094326 for tooltips; 0 16px 12px -10px #00000026 for raised panels</p></article>
+          </div>
+        </section>
+
+        <section class="cs" id="final">
+          <p class="secnum">11</p>
+          <h2>Final Designs</h2>
+          <p>Annotated screens from the live site (desktop, 1440 px wide, captured 30 Oct 2026). Screenshot embeds: <mark class="todo">[Add: final screen images or Figma frames]</mark>.</p>
+          <p>The captures below are the live desktop screens. Select one to enlarge it. Arrow keys move between images. Escape closes the viewer.</p>
+
+          <h3 id="final-home">Home: the front door</h3>
+          <div class="annotated">
+            <figure class="shot">
+              <div class="shot-frame">
+                <a class="zoom" href="assets/images/01-home.png" data-lightbox>
+                  <span class="visually-hidden">Enlarge. </span>
+                  <img src="assets/images/01-home.png" width="1440" height="900" alt="Home on askchemille.com. Two-tone headline, search field with example prompts, See all grades and filter, Quick guide, a 31-video playlist, and a free-account card." loading="lazy" />
+                  <span class="shot-badge" aria-hidden="true">Enlarge</span>
+                </a>
+              </div>
+              <figcaption>Home. Desktop, 1440×900, 30 Oct 2026.</figcaption>
+            </figure>
+            <ol class="annotations">
+              <li>Two-tone hero, "Welcome to the Chemille® Digital Assistant, your gateway to endless materials knowledge", in Midnight Violet and Muted Lilac.</li>
+              <li>Search field with rotating example prompts teaches the kind of query that works.</li>
+              <li>Primary "See all grades &amp; filter" for filter-first users; tonal "Quick guide" for newcomers.</li>
+              <li>Right column: 31-video tutorial playlist and a free-account value card with six benefits.</li>
+              <li>"Start searching by Industry" menu for users unsure where to begin.</li>
+            </ol>
+          </div>
+
+          <h3 id="final-results">Guided results: the clarifying question</h3>
+          <div class="annotated">
+            <figure class="shot">
+              <div class="shot-frame">
+                <a class="zoom" href="assets/images/02-ai-results-clarifying.png" data-lightbox>
+                  <span class="visually-hidden">Enlarge. </span>
+                  <img src="assets/images/02-ai-results-clarifying.png" width="1440" height="900" alt="Search results for PPS grade for extrusion. The query stays in the field, PPS is a removable chip, and the assistant asks which processing filter to apply, with Film, Other, Profile and Sheet Extrusion chips plus Skip." loading="lazy" />
+                  <span class="shot-badge" aria-hidden="true">Enlarge</span>
+                </a>
+              </div>
+              <figcaption>Clarifying question for "PPS grade for extrusion". Desktop, 1440×900, 30 Oct 2026.</figcaption>
+            </figure>
+            <ol class="annotations">
+              <li>Query stays editable at the top, with a save-search action.</li>
+              <li>Parsed intent becomes a filter chip (PPS ×) beside Filters and Add Filter.</li>
+              <li>Assistant headline states the count, then asks one question: processing type for "extrusion".</li>
+              <li>Answer chips (Film, Other, Profile, Sheet Extrusion) plus Skip keep control with the user.</li>
+              <li>Sort and colour controls sit above cards; an in-list card invites a free account.</li>
+            </ol>
+          </div>
+          <figure class="shot">
+            <div class="shot-frame">
+              <div class="shot-scroll">
+                <a class="zoom" href="assets/images/02b-results-fullpage.png" data-lightbox>
+                  <span class="visually-hidden">Enlarge. </span>
+                  <img src="assets/images/02b-results-fullpage.png" width="1440" height="6632" alt="Full results page for PPS grade for extrusion: strong matches, an in-list account card, partial matches to consider, and a prompt to get in touch for an exact match." loading="lazy" />
+                </a>
+              </div>
+              <span class="shot-badge" aria-hidden="true">Enlarge</span>
+            </div>
+            <figcaption>Full results page for the same query: strong matches, the in-list account card, "Partial matches to consider", and "Need an exact match? Get in touch". Scroll inside the frame, or enlarge for the whole capture. 1440 px wide, 30 Oct 2026.</figcaption>
+          </figure>
+
+          <h3 id="final-alt">Alternatives: % match to a competitor grade</h3>
+          <div class="annotated">
+            <figure class="shot">
+              <div class="shot-frame">
+                <a class="zoom" href="assets/images/03-alternatives-match.png" data-lightbox>
+                  <span class="visually-hidden">Enlarge. </span>
+                  <img src="assets/images/03-alternatives-match.png" width="1440" height="900" alt="Alternatives search for ultramid a3wg6. The assistant says 11 similar grades and asks which variant. A card shows 98 percent match to Ultramid A3WG6 LT BK in orange." loading="lazy" />
+                  <span class="shot-badge" aria-hidden="true">Enlarge</span>
+                </a>
+              </div>
+              <figcaption>Alternatives for "alternative to Ultramid A3WG6". Desktop, 1440×900, 30 Oct 2026.</figcaption>
+            </figure>
+            <ol class="annotations">
+              <li>Assistant confirms "11 grades similar to 'ultramid a3wg6'" and asks which variant.</li>
+              <li>Variant chips disambiguate before ranking, preventing a wrong baseline.</li>
+              <li>Results sorted by relevance; each card shows the match in orange, e.g. "98% match to Ultramid® A3WG6 LT BK, +1".</li>
+            </ol>
+          </div>
+
+          <h3 id="final-grade">Grade detail: evidence and action</h3>
+          <div class="annotated">
+            <figure class="shot">
+              <div class="shot-frame">
+                <a class="zoom" href="assets/images/04-grade-detail.png" data-lightbox>
+                  <span class="visually-hidden">Enlarge. </span>
+                  <img src="assets/images/04-grade-detail.png" width="1440" height="900" alt="Grade detail for Fortron FX20T1. A strong-matches rail sits on the left. The page shows a summary, Request quote, View Documents, and jump-to links." loading="lazy" />
+                  <span class="shot-badge" aria-hidden="true">Enlarge</span>
+                </a>
+              </div>
+              <figcaption>Fortron® FX20T1, top of the grade page. Desktop, 1440×900, 30 Oct 2026.</figcaption>
+            </figure>
+            <ol class="annotations">
+              <li>Strong-match rail on the left keeps the shortlist one click away.</li>
+              <li>Grade name, polymer and a one-sentence summary, then Request quote and View Documents.</li>
+              <li>Jump-to anchors: Chemical Resistance, Properties, Available Grade Colors, Talk to a specialist.</li>
+              <li>Chemical-resistance tables by chemical family, with a guidance-only disclaimer.</li>
+              <li>Custom-colour prompt with Email Us and Chat With Us.</li>
+            </ol>
+          </div>
+          <figure class="shot">
+            <div class="shot-frame">
+              <div class="shot-scroll">
+                <a class="zoom" href="assets/images/04b-grade-fullpage.png" data-lightbox>
+                  <span class="visually-hidden">Enlarge. </span>
+                  <img src="assets/images/04b-grade-fullpage.png" width="1440" height="4529" alt="Full grade page for Fortron FX20T1, including chemical resistance by family, properties, available grade colors, a custom-colour prompt, and talk to a specialist." loading="lazy" />
+                </a>
+              </div>
+              <span class="shot-badge" aria-hidden="true">Enlarge</span>
+            </div>
+            <figcaption>Full grade page: chemical-resistance families with the guidance-only note, properties, available colours, the custom-colour prompt, and talk to a specialist. Scroll inside the frame, or enlarge. 1440 px wide, 30 Oct 2026.</figcaption>
+          </figure>
+
+          <h3 id="final-gate">Account gate: value at the moment of intent</h3>
+          <div class="annotated">
+            <figure class="shot">
+              <div class="shot-frame">
+                <a class="zoom" href="assets/images/05-signin-gate.png" data-lightbox>
+                  <span class="visually-hidden">Enlarge. </span>
+                  <img src="assets/images/05-signin-gate.png" width="1440" height="900" alt="Sign-in gate over search results. The modal is titled Sign in or create an account, lists six benefits with green checks and lock icons, and offers Sign in and Create a free account." loading="lazy" />
+                  <span class="shot-badge" aria-hidden="true">Enlarge</span>
+                </a>
+              </div>
+              <figcaption>Account gate over results for a sustainable, UV-resistant POM query. Desktop, 1440×900, 30 Oct 2026.</figcaption>
+            </figure>
+            <ol class="annotations">
+              <li>Opens on gated actions, over the results the user was already viewing.</li>
+              <li>Title "Sign in or create an account." with "free" in Electric Violet.</li>
+              <li>Six benefits with green checks and lock icons show exactly what unlocks.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="cs" id="outcome">
+          <p class="secnum">12</p>
+          <h2>Outcome</h2>
+          <p>What is publicly verifiable: Chemille launched on 28 April 2025, and as of 30 Oct 2026 the live product lists 2,115 grades, 448 resources and 31 tutorial videos in English and Chinese, and has added search types such as OEM specification, regulatory and certification, and PFAS-alternative discovery.</p>
+          <div class="table-wrap">
+            <table>
+              <caption>Results still to fill in from project data.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Outcome area</th>
+                  <th scope="col">Your result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">What shipped from your work</th>
+                  <td><mark class="todo">[Add: features and screens you designed that went live]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">Adoption</th>
+                  <td><mark class="todo">[Add: users, searches or registrations after launch]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">Business impact</th>
+                  <td><mark class="todo">[Add: quote requests, qualified leads, expert conversations]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">User feedback</th>
+                  <td><mark class="todo">[Add: usability or satisfaction results, with a quote]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">Recognition</th>
+                  <td><mark class="todo">[Add: internal or external recognition, if any]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">What I learned</th>
+                  <td><mark class="todo">[Add: two or three reflections on designing AI-guided search]</mark></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cs" id="metrics">
+          <p class="secnum">13</p>
+          <h2>Metrics</h2>
+          <div class="table-wrap">
+            <table>
+              <caption>KPI definitions. Baseline and result cells are open.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">KPI</th>
+                  <th scope="col">Definition</th>
+                  <th scope="col">Baseline</th>
+                  <th scope="col">Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Search success rate</th>
+                  <td>Share of searches that reach a grade detail page</td>
+                  <td><mark class="todo">[Add]</mark></td>
+                  <td><mark class="todo">[Add]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">Time to first relevant grade</th>
+                  <td>Median time from first query to first grade opened</td>
+                  <td><mark class="todo">[Add]</mark></td>
+                  <td><mark class="todo">[Add]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">Clarifying-question engagement</th>
+                  <td>Share of guided prompts answered vs skipped</td>
+                  <td><mark class="todo">[Add]</mark></td>
+                  <td><mark class="todo">[Add]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">Zero- and low-result rate</th>
+                  <td>Share of searches returning 0 or partial matches only</td>
+                  <td><mark class="todo">[Add]</mark></td>
+                  <td><mark class="todo">[Add]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">Alternatives usage</th>
+                  <td>Share of searches that start from a competitor grade; click-through on % match</td>
+                  <td><mark class="todo">[Add]</mark></td>
+                  <td><mark class="todo">[Add]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">Grade-to-quote conversion</th>
+                  <td>Request quote clicks per grade detail view</td>
+                  <td><mark class="todo">[Add]</mark></td>
+                  <td><mark class="todo">[Add]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">Gate conversion</th>
+                  <td>Account creations per gate view</td>
+                  <td><mark class="todo">[Add]</mark></td>
+                  <td><mark class="todo">[Add]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">Expert hand-off</th>
+                  <td>Live chats started from search or grade pages; share that become qualified opportunities</td>
+                  <td><mark class="todo">[Add]</mark></td>
+                  <td><mark class="todo">[Add]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">Return usage</th>
+                  <td>Saved searches and repeat visitors within 30 days</td>
+                  <td><mark class="todo">[Add]</mark></td>
+                  <td><mark class="todo">[Add]</mark></td>
+                </tr>
+                <tr>
+                  <th scope="row">Usability score</th>
+                  <td>SUS or task success in moderated tests</td>
+                  <td><mark class="todo">[Add]</mark></td>
+                  <td><mark class="todo">[Add]</mark></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Suggested headline for the case-study cover once filled: <mark class="todo">[Add: one sentence with your strongest verified result]</mark>.</p>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site">
+      <div class="wrap">
+        <p>
+          Case study by
+          <a href="https://www.linkedin.com/in/suvarnamyneni/" rel="noopener noreferrer">Suvarna Myneni</a>.
+          Product:
+          <a href="https://www.askchemille.com/" target="_blank" rel="noopener noreferrer">askchemille.com</a>.
+        </p>
+        <p class="quiet">
+          Guided AI grade search and competitor-grade replacement. Desktop screens captured 30 Oct 2026.
+          Other studies:
+          <a href="https://suvarnamyneni-project.github.io/my-exp-mira-case-study/">My eXp + MIRA</a>,
+          <a href="https://suvarnamyneni-project.github.io/splits-case-study/">eXp Splits</a>,
+          <a href="https://suvarnamyneni-project.github.io/amazon-fresh-case-study/">Shop by Recipe for Amazon Fresh</a>.
+        </p>
+      </div>
+    </footer>
+
+    <dialog id="lightbox" aria-labelledby="lb-cap">
+      <div class="lb-panel">
+        <button type="button" class="lb-close" id="lb-close">Close</button>
+        <button type="button" class="lb-nav lb-prev" id="lb-prev" aria-label="Previous image">‹</button>
+        <img id="lb-img" alt="" />
+        <button type="button" class="lb-nav lb-next" id="lb-next" aria-label="Next image">›</button>
+        <p class="lb-caption" id="lb-cap"></p>
+        <p class="lb-count" id="lb-count"></p>
+      </div>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
