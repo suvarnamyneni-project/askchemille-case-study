@@ -63,3 +63,34 @@
     lbImg.removeAttribute("src");
   });
 })();
+
+(function () {
+  var scroller = document.getElementById("persona-scroller");
+  if (!scroller) return;
+  var prev = document.querySelector("[data-persona-dir='-1']");
+  var next = document.querySelector("[data-persona-dir='1']");
+
+  function step() {
+    var card = scroller.querySelector(".persona");
+    if (!card) return Math.round(scroller.clientWidth * 0.8);
+    var styles = window.getComputedStyle(scroller);
+    var gap = parseFloat(styles.columnGap || styles.gap) || 0;
+    return card.getBoundingClientRect().width + gap;
+  }
+
+  function update() {
+    var max = scroller.scrollWidth - scroller.clientWidth;
+    if (prev) prev.disabled = scroller.scrollLeft <= 2;
+    if (next) next.disabled = scroller.scrollLeft >= max - 2;
+  }
+
+  function scrollByDir(dir) {
+    scroller.scrollBy({ left: dir * step(), behavior: "smooth" });
+  }
+
+  if (prev) prev.addEventListener("click", function () { scrollByDir(-1); });
+  if (next) next.addEventListener("click", function () { scrollByDir(1); });
+  scroller.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+})();
