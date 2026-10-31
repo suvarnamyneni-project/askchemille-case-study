@@ -18,31 +18,30 @@ python3 -m http.server 8080
 
 Then visit http://localhost:8080/. Paths are relative, so the site works both as a project site and from a local folder.
 
-There is no build step. The site is plain HTML, CSS, and JavaScript, the same approach as the other portfolio case studies. Diagrams are inline SVG. An empty `.nojekyll` file keeps Jekyll from processing the site.
+There is no build step. The page is plain HTML and CSS (`case-study.css`), plus a small script for the image viewer. Diagrams are inline SVG. An empty `.nojekyll` file keeps Jekyll from processing the site.
 
 ## What’s in the study
 
-Section order:
+1. My Role
+2. Design Process
+3. Problem
+4. Stakeholders
+5. End Users
+6. Research Methods
+7. Competitive Analysis
+8. User Personas
+9. Design Decisions
+10. Prototype
+11. UI Kit
+12. Final Design
+13. Outcome
+14. Metrics
 
-1. Design Problem
-2. Stakeholders
-3. End-users
-4. Primary Research
-5. Secondary Research
-6. Competitive Analysis
-7. User Personas
-8. Design Decisions (mapped to personas, with the sitemap and both user flows)
-9. Prototype
-10. UI Kit
-11. Final Designs
-12. Outcome
-13. Metrics
-
-Click a final screen to enlarge it. Arrow keys move between images. Escape closes the viewer. Without JavaScript, that control opens the image file directly. The competitive-table switch is CSS, so it still works without JavaScript.
+Click a final screen to enlarge it. Arrow keys move between images. Escape closes the viewer. Without JavaScript, that control opens the image file directly.
 
 ## What the study claims
 
-Role: self-initiated concept redesign covering UX research, heuristic evaluation, IA, interaction design, and UI. Team: solo. Primary research is a heuristic evaluation (Nielsen's 10), cognitive walkthroughs, and task analysis of the live desktop screens from 30 Oct 2026. Personas are proto-personas. The prototype is the flows and annotated screens on the page. Outcome describes the concept, not a launch. The metrics table is labeled Target.
+Role: self-initiated concept redesign covering UX research, heuristic evaluation, IA, interaction design, and UI. Team: solo. Primary research is a heuristic evaluation (Nielsen's 10), cognitive walkthroughs, and task analysis of the live desktop screens from 30 Oct 2026. Personas are proto-personas. The prototype is the flows and annotated screens on the page. Outcome describes the concept, not a launch. The metrics are labeled Target.
 
 ## Screens
 

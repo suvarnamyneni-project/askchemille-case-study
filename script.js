@@ -1,45 +1,4 @@
 (function () {
-  var links = Array.prototype.slice.call(document.querySelectorAll(".toc a"));
-  var sections = links
-    .map(function (link) {
-      return document.querySelector(link.getAttribute("href"));
-    })
-    .filter(Boolean);
-
-  if ("IntersectionObserver" in window && sections.length) {
-    var activeId = "";
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          activeId = entry.target.id;
-        });
-        links.forEach(function (link) {
-          var on = link.getAttribute("href") === "#" + activeId;
-          if (on) link.setAttribute("aria-current", "true");
-          else link.removeAttribute("aria-current");
-        });
-        var current = document.querySelector('.toc a[aria-current="true"]');
-        var nav = document.querySelector(".toc");
-        if (!current || !nav || window.matchMedia("(min-width: 981px)").matches) return;
-        var navRect = nav.getBoundingClientRect();
-        var linkRect = current.getBoundingClientRect();
-        if (linkRect.left < navRect.left || linkRect.right > navRect.right) {
-          nav.scrollBy({
-            left: linkRect.left - navRect.left - 16,
-            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-              ? "auto"
-              : "smooth",
-          });
-        }
-      },
-      { rootMargin: "-20% 0px -65% 0px", threshold: 0.01 }
-    );
-    sections.forEach(function (section) {
-      observer.observe(section);
-    });
-  }
-
   var dialog = document.getElementById("lightbox");
   var lbImg = document.getElementById("lb-img");
   var lbCap = document.getElementById("lb-cap");
