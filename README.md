@@ -8,7 +8,7 @@ The live platform was built by Celanese with Work & Co. This study is an indepen
 
 Published with GitHub Pages from the repository root:
 
-https://suvarnamyneni-project.github.io/askchemille-case-study/
+https://suvarnamyneni.github.io/askchemille-case-study/
 
 Locally, open `index.html` in a browser, or serve the folder:
 
